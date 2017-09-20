@@ -1,7 +1,8 @@
 # kejarmimpi    
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+[![GitHub release](https://img.shields.io/github/release/phw/peek.svg)](https://github.com/phw/peek/releases)
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)]()
-[![label](https://img.shields.io/github/issues-raw/badges/shields/website.svg)]()
+[![Translation Status](https://hosted.weblate.org/widgets/peek/-/svg-badge.svg)](https://hosted.weblate.org/engage/peek/?utm_source=widget)
 [![label](https://img.shields.io/github/issues-raw/badges/shields/website.svg)]()  
 Restfull api with gin-gonic framework golang language
 
