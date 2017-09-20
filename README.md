@@ -1,9 +1,9 @@
-# kejarmimpi  
-Restfull api with gin-gonic framework golang language  
+# kejarmimpi    
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)]()
 [![label](https://img.shields.io/github/issues-raw/badges/shields/website.svg)]()
-[![label](https://img.shields.io/github/issues-raw/badges/shields/website.svg)]()
+[![label](https://img.shields.io/github/issues-raw/badges/shields/website.svg)]()  
+Restfull api with gin-gonic framework golang language
 
 # Deps
 * Install golang
@@ -15,16 +15,33 @@ Restfull api with gin-gonic framework golang language
 # Running in local
 * Clone this repo
 * Replace the database connection code with your database connection in the `db.go` file
-* Run by : `go run server.go`
+* Run by : 
+    
+      go run server.go
+
 * Open localhost:8080
 
 # Running in Heroku
 * Clone this repo
-* Login akun : `Heroku login`
-* Create apps : `Heroku create`
-* Create database postgresql : `Heroku addons:create heroku-postgresql:hobby-dev`
-* Push : `Git push heroku master`
-* Open app : `Heroku open`
+* Login akun : 
+
+      Heroku login
+
+* Create apps : 
+
+      Heroku create
+
+* Create database postgresql : 
+
+      Heroku addons:create heroku-postgresql:hobby-dev
+
+* Push : 
+
+      Git push heroku master
+
+* Open app : 
+
+      Heroku open
 
 # Testing in Url
 * Register  
