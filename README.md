@@ -1,5 +1,9 @@
-# km-gingonic  
-Restfull api with gin-gonic framework golang language
+# kejarmimpi  
+Restfull api with gin-gonic framework golang language  
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)]()
+[![label](https://img.shields.io/github/issues-raw/badges/shields/website.svg)]()
+[![label](https://img.shields.io/github/issues-raw/badges/shields/website.svg)]()
 
 # Deps
 * Install golang
