@@ -1,28 +1,31 @@
-# km-gingonic
+# km-gingonic  
+Restfull api with gin-gonic framework golang language
 
 # Deps
-* install golang
-* set gopath
+* Install golang
+* Set gopath
+* Install heroku CLI
+* Postman (optional) for testing
 
 # Running in local
-* clone this repo
-* run by: `go run server.go`
-* open localhost:8080
+* Clone this repo
+* Run by: `go run server.go`
+* Open localhost:8080
 
 # Running in Heroku
-* clone this repo
-* heroku login
-* heroku create // create apps in heroku
-* heroku addons:create heroku-postgresql:hobby-dev // add database in heroku
-* git push heroku master
-* heroku open
+* Clone this repo
+* Heroku login
+* Heroku create // create apps in heroku
+* Heroku addons:create heroku-postgresql:hobby-dev // add database in heroku
+* Git push heroku master
+* Heroku open
 
 # License
 MIT
 
 # Authors
 * Reza andriyunantoreza@gmail.com
-* ervin social.ervin@gmail.com
-* yudha yudhaariestra@gmail.com
+* Ervin social.ervin@gmail.com
+* Yudha yudhaariestra@gmail.com
 
 
