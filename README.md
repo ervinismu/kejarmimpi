@@ -14,11 +14,11 @@ Restfull api with gin-gonic framework golang language
 
 # Running in Heroku
 * Clone this repo
-* Heroku login
-* Heroku create // create apps in heroku
-* Heroku addons:create heroku-postgresql:hobby-dev // add database in heroku
-* Git push heroku master
-* Heroku open
+* Login akun: `Heroku login`
+* Create apps: `Heroku create`
+* Create database: `Heroku addons:create heroku-postgresql:hobby-dev`
+* Push: `Git push heroku master`
+* Open app: `Heroku open`
 
 # License
 MIT
