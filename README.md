@@ -14,7 +14,10 @@ Restfull api with gin-gonic framework golang language
 - Postman (optional) for testing
 
 # Running in local
-- Clone this repo
+- Clone this appp :
+
+      go get github.com/ervinismu/kejarmimpi
+
 - Replace the database connection code with your database connection in the `db.go` file
 - Run by : 
     
@@ -23,7 +26,10 @@ Restfull api with gin-gonic framework golang language
 - Open localhost:8080
 
 # Running in Heroku
-- Clone this repo
+- Download this app :
+
+      go get github.com/ervinismu/kejarmimpi
+
 - Login akun : 
 
       Heroku login
