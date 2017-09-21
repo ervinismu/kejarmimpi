@@ -7,40 +7,40 @@
 Restfull api with gin-gonic framework golang language
 
 # Deps
-- [x] Install golang
-- [x] Set gopath
-- [x] Install heroku CLI
-- [x] Install Postgresql
-- [x] Postman (optional) for testing
+- Install golang
+- Set gopath
+- Install heroku CLI
+- Install Postgresql
+- Postman (optional) for testing
 
 # Running in local
-- [x] Clone this repo
-- [x] Replace the database connection code with your database connection in the `db.go` file
-- [x] Run by : 
+- Clone this repo
+- Replace the database connection code with your database connection in the `db.go` file
+- Run by : 
     
       go run server.go
 
-- [x] Open localhost:8080
+- Open localhost:8080
 
 # Running in Heroku
-- [x] Clone this repo
-- [x] Login akun : 
+- Clone this repo
+- Login akun : 
 
       Heroku login
 
-- [x] Create apps : 
+- Create apps : 
 
       Heroku create
 
-- [x] Create database postgresql : 
+- Create database postgresql : 
 
       Heroku addons:create heroku-postgresql:hobby-dev
 
-- [x] Push : 
+- Push : 
 
       Git push heroku master
 
-- [x] Open app : 
+- Open app : 
 
       Heroku open
 
@@ -58,12 +58,9 @@ Testing your url with Postman or curl
 | View Profile Data   | `<your_url>/profile`  |   **GET**    |
 | Insert Profile Data | `<your_url>/profile`  |   **POST**  |
 
-# License
-MIT
-
 # Authors
-* Reza andriyunantoreza@gmail.com
-* Ervin social.ervin@gmail.com
-* Yudha yudhaariestra@gmail.com
+- Reza andriyunantoreza@gmail.com
+- Ervin social.ervin@gmail.com
+- Yudha yudhaariestra@gmail.com
 
 
