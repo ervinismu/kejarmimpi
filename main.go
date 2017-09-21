@@ -3,9 +3,9 @@ package main
 import (
 	"os"
 
+	"github.com/ervinismu/kejarmimpi/controllers"
+	"github.com/ervinismu/kejarmimpi/middleware"
 	"github.com/gin-gonic/gin"
-	"kejarmimpi/controllers"
-	"kejarmimpi/middleware"
 )
 
 func main() {
@@ -17,14 +17,16 @@ func main() {
 	// var post models.Post
 	// var user models.User
 	// db.AutoMigrate(&user)
-	// if you local change port using your available port
 	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8000"
+	}
 	//This func is for server API
 	r := gin.Default()
 	//Method for get post and login
 	r.GET("/post", controllers.GetPost)
-	r.POST("/login", controllers.Login)
 	r.POST("/register", controllers.Register)
+	r.POST("/login", controllers.Login)
 	r.Use(middleware.CheckToken)
 	//Method for post
 	r.POST("/post", controllers.CreatePost)

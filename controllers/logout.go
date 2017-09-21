@@ -1,9 +1,9 @@
 package controllers
 
 import (
+	"github.com/ervinismu/kejarmimpi/models"
+	"github.com/ervinismu/kejarmimpi/template"
 	"github.com/gin-gonic/gin"
-	"kejarmimpi/models"
-	"kejarmimpi/template"
 )
 
 //Logout is func for logout from accout
@@ -37,4 +37,5 @@ func Logout(c *gin.Context) {
 		data := template.Response(&res)
 		c.JSON(200, data)
 	}
+
 }

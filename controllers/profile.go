@@ -3,9 +3,9 @@ package controllers
 import (
 	"fmt"
 
+	"github.com/ervinismu/kejarmimpi/models"
+	"github.com/ervinismu/kejarmimpi/template"
 	"github.com/gin-gonic/gin"
-	"kejarmimpi/models"
-	"kejarmimpi/template"
 )
 
 // GetProfile func is for get profile by id
@@ -39,5 +39,7 @@ func UpdateProfile(c *gin.Context) {
 	}
 	c.BindJSON(&user)
 	db.Save(&user)
+	user.Password = ""
+	user.Token = ""
 	c.JSON(200, user)
 }

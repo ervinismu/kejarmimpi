@@ -2,7 +2,7 @@ package controllers
 
 import "golang.org/x/crypto/bcrypt"
 
-//GenerateToken is for generate token using AES
+//HashPassword is for generate token using AES
 func HashPassword(password string) (string, error) {
 	bytes, err := bcrypt.GenerateFromPassword([]byte(password), 14)
 	return string(bytes), err

@@ -3,9 +3,9 @@ package controllers
 import (
 	"fmt"
 
+	"github.com/ervinismu/kejarmimpi/models"
+	"github.com/ervinismu/kejarmimpi/template"
 	"github.com/gin-gonic/gin"
-	"kejarmimpi/models"
-	"kejarmimpi/template"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -23,23 +23,12 @@ func Login(c *gin.Context) {
 	//1. get email and password
 	c.BindJSON(&user)
 	password := user.Password
-	// 1.1 becrypt password
-	// password := []byte(user.Password)
-	// hashedPassword, err := bcrypt.GenerateFromPassword(password, bcrypt.DefaultCost)
-	// if err != nil {
-	// 	var res models.Response
-	// 	res.Code = "401"
-	// 	res.Message = "Failed to encrypt password!"
-	// 	c.JSON(400, res)
-	// }
-	// user.Password = string(hashedPassword)
-	// log.Println(user.Password)
 	//2. check email
 	if err := db.Select("email, password").Where("email = ?", user.Email).First(&user).Error; err != nil {
 		//5. Skip Generate Token and return message
 		var res models.Response
 		res.Code = "401"
-		res.Message = "Your email or password is wrong!"
+		res.Message = "Email doesn't exist!"
 		res.Token = ""
 		data := template.Response(&res)
 		c.JSON(200, data)
@@ -66,7 +55,7 @@ func Login(c *gin.Context) {
 		}
 		var res models.Response
 		res.Code = "402"
-		res.Message = "Password salah!"
+		res.Message = "Your Password is wrong!"
 		res.Token = user.Token
 		data := template.Response(&res)
 		c.JSON(200, data)

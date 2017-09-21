@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/ervinismu/kejarmimpi/models"
 	"github.com/gin-gonic/gin"
-	"kejarmimpi/models"
 )
 
 // GetPost is method get post from database
@@ -25,6 +25,9 @@ func GetPost(c *gin.Context) {
 			c.AbortWithStatus(404)
 			fmt.Println(err)
 		}
+		user.Password = ""
+		user.Token = ""
+		user.PasswordConfirm = ""
 		post[i].User = user
 	}
 	data := map[string]interface{}{
@@ -38,13 +41,22 @@ func CreatePost(c *gin.Context) {
 	db := InitDb()
 	defer db.Close()
 	var post models.Post
+	var res models.Response
 	c.BindJSON(&post)
-	post.Date = time.Now()
-	if err := db.Create(&post).Error; err != nil {
-		c.AbortWithStatus(404)
-		fmt.Println(err)
+	if post.Content == "" && post.Photo == "" {
+		res.Code = "401"
+		res.Message = "Content must not blank!"
+		c.JSON(400, res)
 	} else {
-		c.JSON(200, post)
+		post.Date = time.Now()
+		if err := db.Create(&post).Error; err != nil {
+			c.AbortWithStatus(404)
+			fmt.Println(err)
+		} else {
+			res.Code = "200"
+			res.Message = "Post Success!"
+			c.JSON(200, res)
+		}
 	}
 }
 
@@ -55,11 +67,14 @@ func DeletePost(c *gin.Context) {
 
 	id := c.Params.ByName("id")
 	var post models.Post
+	var res models.Response
 	if err := db.Where("id = ?", id).Delete(&post).Error; err != nil {
 		c.AbortWithStatus(404)
 		fmt.Println(404)
 	} else {
-		c.JSON(200, gin.H{"post #" + id: "deleted"})
+		res.Code = "200"
+		res.Message = "Post " + id + " has been deleted."
+		c.JSON(200, res)
 	}
 
 }
@@ -67,6 +82,7 @@ func DeletePost(c *gin.Context) {
 //UpdatePost used for edit post
 func UpdatePost(c *gin.Context) {
 	var post models.Post
+	var res models.Response
 	db := InitDb()
 	id := c.Params.ByName("id")
 	if err := db.Where("id = ?", id).First(&post).Error; err != nil {
@@ -74,6 +90,17 @@ func UpdatePost(c *gin.Context) {
 		fmt.Println(err)
 	}
 	c.BindJSON(&post)
-	db.Save(&post)
-	c.JSON(200, post)
+
+	if post.Content == "" && post.Photo == "" {
+		res.Code = "401"
+		res.Message = "Content must not blank!"
+		c.JSON(400, res)
+		c.AbortWithStatus(400)
+	} else {
+		db.Save(&post)
+		res.Code = "200"
+		res.Message = "Update post success!"
+		c.JSON(200, res)
+	}
+
 }

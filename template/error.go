@@ -1,6 +1,6 @@
 package template
 
-import "kejarmimpi/models"
+import "github.com/ervinismu/kejarmimpi/models"
 
 //Response is func for template Error message
 func Response(res *models.Response) map[string]interface{} {

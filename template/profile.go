@@ -1,6 +1,6 @@
 package template
 
-import "kejarmimpi/models"
+import "github.com/ervinismu/kejarmimpi/models"
 
 //Profile is making template for get data profile
 func Profile(user *models.User) map[string]interface{} {
