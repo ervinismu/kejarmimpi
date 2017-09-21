@@ -7,40 +7,40 @@
 Restfull api with gin-gonic framework golang language
 
 # Deps
-* Install golang
-* Set gopath
-* Install heroku CLI
-* Install Postgresql
-* Postman (optional) for testing
+- [x] Install golang
+- [x] Set gopath
+- [x] Install heroku CLI
+- [x] Install Postgresql
+- [x] Postman (optional) for testing
 
 # Running in local
-* Clone this repo
-* Replace the database connection code with your database connection in the `db.go` file
-* Run by : 
+- [x] Clone this repo
+- [x] Replace the database connection code with your database connection in the `db.go` file
+- [x] Run by : 
     
       go run server.go
 
-* Open localhost:8080
+- [x] Open localhost:8080
 
 # Running in Heroku
-* Clone this repo
-* Login akun : 
+- [x] Clone this repo
+- [x] Login akun : 
 
       Heroku login
 
-* Create apps : 
+- [x] Create apps : 
 
       Heroku create
 
-* Create database postgresql : 
+- [x] Create database postgresql : 
 
       Heroku addons:create heroku-postgresql:hobby-dev
 
-* Push : 
+- [x] Push : 
 
       Git push heroku master
 
-* Open app : 
+- [x] Open app : 
 
       Heroku open
 
@@ -48,15 +48,15 @@ Restfull api with gin-gonic framework golang language
 Testing your url with Postman or curl
 
 | Name                | Url                   | Method   |
-| --------------------|:---------------------:| --------:|
-| Register            | `<your_url>/register` |   POST   |
-| Login               | `<your_url>/login`    |   POST   |
-| Logout              | `<your_url>/logout`   |   GET    |
-| Get All Post        | `<your_url>/post`     |   GET    |
-| Create Post         | `<your_url>/post`     |   POST   |
-| Delete Post         | `<your_url>/post`     |   DELETE |
-| View Profile Data   | `<your_url>/profile`  |   GET    |
-| Insert Profile Data | `<your_url>/profile`  |   POST   |
+| --------------------|:---------------------:|:--------:|
+| Register            | `<your_url>/register` |   **POST**   |
+| Login               | `<your_url>/login`    |   **POST**   |
+| Logout              | `<your_url>/logout`   |   **GET**    |
+| Get All Post        | `<your_url>/post`     |   **GET**    |
+| Create Post         | `<your_url>/post`     |   **POST**   |
+| Delete Post         | `<your_url>/post`     |   **DELETE** |
+| View Profile Data   | `<your_url>/profile`  |   **GET**    |
+| Insert Profile Data | `<your_url>/profile`  |   **POST**  |
 
 # License
 MIT
