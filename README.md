@@ -45,22 +45,18 @@ Restfull api with gin-gonic framework golang language
       Heroku open
 
 # Testing in Url
-* Register  
-`<your_url>/register` with method POST in Postman
-* Login  
-`<your_url>/login` with method POST in Postman
-* Logout  
-`<your_url>/logout` with method GET in Postman
-* Get All Post  
-`<your_url>/post` with method GET in Postman
-* Create Post  
-`<your_url>/post` with method POST in Postman
-* Delete Post  
-`<your_url>/register` with method DELETE in Postman
-* View Profile Data  
-`<your_url>/register` with method GET in Postman
-* Insert Profile Data  
-`<your_url>/register` with method POST in Postman
+Testing your url with Postman or curl
+
+| Name                | Url                   | Method   |
+| --------------------|:---------------------:| --------:|
+| Register            | `<your_url>/register` |   POST   |
+| Login               | `<your_url>/login`    |   POST   |
+| Logout              | `<your_url>/logout`   |   GET    |
+| Get All Post        | `<your_url>/post`     |   GET    |
+| Create Post         | `<your_url>/post`     |   POST   |
+| Delete Post         | `<your_url>/post`     |   DELETE |
+| View Profile Data   | `<your_url>/profile`  |   GET    |
+| Insert Profile Data | `<your_url>/profile`  |   POST   |
 
 # License
 MIT
