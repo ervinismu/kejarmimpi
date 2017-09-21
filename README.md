@@ -21,7 +21,7 @@ Restfull api with gin-gonic framework golang language
 - Replace the database connection code with your database connection in the `db.go` file
 - Run by : 
     
-      go run server.go
+      go run main.go
 
 - Open localhost:8080
 
