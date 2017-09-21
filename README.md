@@ -4,7 +4,7 @@
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)]()
 [![Translation Status](https://hosted.weblate.org/widgets/peek/-/svg-badge.svg)](https://hosted.weblate.org/engage/peek/?utm_source=widget)
 [![label](https://img.shields.io/github/issues-raw/badges/shields/website.svg)]()  
-Restfull api with gin-gonic framework golang language
+Restfull api with gin-gonic framework golang language  
 
 # Deps
 - Install golang
@@ -14,6 +14,7 @@ Restfull api with gin-gonic framework golang language
 - Postman (optional) for testing
 
 # Running in local
+![Peek recording itself](https://github.com/ervinismu/kejarmimpi/blob/master/asset/local.gif)
 - Clone this appp :
 
       go get github.com/ervinismu/kejarmimpi
