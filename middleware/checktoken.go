@@ -1,9 +1,16 @@
 package middleware
 
 import (
-	"github.com/ervinismu/kejarmimpi/controllers"
-	"github.com/ervinismu/kejarmimpi/models"
+<<<<<<< HEAD
 	"github.com/gin-gonic/gin"
+	"github.com/rezandry/kejarmimpi/controllers"
+	"github.com/rezandry/kejarmimpi/models"
+=======
+	"kejarmimpi/configs"
+	"kejarmimpi/models"
+
+	"github.com/gin-gonic/gin"
+>>>>>>> 9fafbf152d3328feb0d1dc7939112e8a940716f4
 )
 
 // CheckToken is func for checking token
@@ -11,12 +18,20 @@ import (
 // 1. check if token empty
 // 2. check if token is not same in database
 func CheckToken(c *gin.Context) {
+<<<<<<< HEAD
 	db := controllers.InitDb()
+=======
+	db := configs.InitDb()
+>>>>>>> 9fafbf152d3328feb0d1dc7939112e8a940716f4
 	defer db.Close()
 
 	var user models.User
 
 	token := c.Request.Header.Get("token")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9fafbf152d3328feb0d1dc7939112e8a940716f4
 	//1. check if token empty
 	if token == "" {
 		data := map[string]interface{}{

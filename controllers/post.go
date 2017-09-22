@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ervinismu/kejarmimpi/models"
 	"github.com/gin-gonic/gin"
+	"github.com/rezandry/kejarmimpi/models"
 )
 
 // GetPost is method get post from database
@@ -13,7 +13,6 @@ func GetPost(c *gin.Context) {
 	db := InitDb()
 	defer db.Close()
 	var post []models.Post
-	var user models.User
 
 	if err := db.Find(&post).Error; err != nil {
 		c.AbortWithStatus(404)
@@ -21,6 +20,7 @@ func GetPost(c *gin.Context) {
 	}
 
 	for i := 0; i < len(post); i++ {
+		var user models.User
 		if err := db.Where("id = ?", post[i].IDUser).Find(&user).Error; err != nil {
 			c.AbortWithStatus(404)
 			fmt.Println(err)
@@ -40,9 +40,17 @@ func GetPost(c *gin.Context) {
 func CreatePost(c *gin.Context) {
 	db := InitDb()
 	defer db.Close()
+	var user models.User
 	var post models.Post
 	var res models.Response
+
+	token := c.Request.Header.Get("token")
+	if err := db.Where("token = ?", token).First(&user).Error; err != nil {
+		c.AbortWithStatus(404)
+		fmt.Println(err)
+	}
 	c.BindJSON(&post)
+	post.IDUser = user.ID
 	if post.Content == "" && post.Photo == "" {
 		res.Code = "401"
 		res.Message = "Content must not blank!"
@@ -65,25 +73,50 @@ func DeletePost(c *gin.Context) {
 	db := InitDb()
 	defer db.Close()
 
+	var user models.User
+	token := c.Request.Header.Get("token")
+	if err := db.Where("token = ?", token).First(&user).Error; err != nil {
+		c.AbortWithStatus(404)
+		fmt.Println(err)
+	}
+
 	id := c.Params.ByName("id")
 	var post models.Post
 	var res models.Response
-	if err := db.Where("id = ?", id).Delete(&post).Error; err != nil {
-		c.AbortWithStatus(404)
-		fmt.Println(404)
+	db.Where("id = ?", id).First(&post)
+	fmt.Println(id)
+	fmt.Println(user.ID)
+	fmt.Println(post.IDUser)
+	if user.ID == post.IDUser {
+		if err := db.Delete(&post).Error; err != nil {
+			c.AbortWithStatus(404)
+			fmt.Println(404)
+		} else {
+			res.Code = "200"
+			res.Message = "Post " + id + " has been deleted."
+			c.JSON(200, res)
+		}
 	} else {
-		res.Code = "200"
-		res.Message = "Post " + id + " has been deleted."
-		c.JSON(200, res)
+		res.Code = "400"
+		res.Message = "You have no access to delete this post"
+		c.JSON(400, res)
 	}
-
 }
 
 //UpdatePost used for edit post
 func UpdatePost(c *gin.Context) {
 	var post models.Post
 	var res models.Response
+	var user models.User
 	db := InitDb()
+	defer db.Close()
+
+	token := c.Request.Header.Get("token")
+	if err := db.Where("token = ?", token).First(&user).Error; err != nil {
+		c.AbortWithStatus(404)
+		fmt.Println(err)
+	}
+
 	id := c.Params.ByName("id")
 	if err := db.Where("id = ?", id).First(&post).Error; err != nil {
 		c.AbortWithStatus(404)
@@ -96,10 +129,14 @@ func UpdatePost(c *gin.Context) {
 		res.Message = "Content must not blank!"
 		c.JSON(400, res)
 		c.AbortWithStatus(400)
-	} else {
+	} else if post.IDUser == user.ID {
 		db.Save(&post)
 		res.Code = "200"
 		res.Message = "Update post success!"
+		c.JSON(200, res)
+	} else {
+		res.Code = "400"
+		res.Message = "You have no access to delete this post"
 		c.JSON(200, res)
 	}
 
