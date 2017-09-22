@@ -1,10 +1,6 @@
 package template
 
-<<<<<<< HEAD
-import "github.com/rezandry/kejarmimpi/models"
-=======
-import "kejarmimpi/models"
->>>>>>> 9fafbf152d3328feb0d1dc7939112e8a940716f4
+import "github.com/ervinismu/kejarmimpi/models"
 
 //Profile is making template for get data profile
 func Profile(user *models.User) map[string]interface{} {

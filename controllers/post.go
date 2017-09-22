@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/rezandry/kejarmimpi/models"
+	"github.com/ervinismu/kejarmimpi/models"
 )
 
 // GetPost is method get post from database
