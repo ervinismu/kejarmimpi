@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/gin-gonic/gin"
 	"github.com/ervinismu/kejarmimpi/models"
+	"github.com/gin-gonic/gin"
 )
 
 // GetPost is method get post from database
@@ -56,7 +56,9 @@ func CreatePost(c *gin.Context) {
 		res.Message = "Content must not blank!"
 		c.JSON(400, res)
 	} else {
-		post.Date = time.Now()
+		t := time.Now()
+		z := t.Format("2006-01-02 15:04:05")
+		post.Date = z
 		if err := db.Create(&post).Error; err != nil {
 			c.AbortWithStatus(404)
 			fmt.Println(err)
