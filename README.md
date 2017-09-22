@@ -24,9 +24,10 @@ Restfull api with gin-gonic framework golang language
     
       go run main.go
 
-- Open localhost:8080
+- Open localhost:8000
 
 # Running in Heroku
+![Peek recording itself](https://github.com/ervinismu/kejarmimpi/blob/master/asset/Peek%202017-09-22%2010-49.gif)
 - Download this app :
 
       go get github.com/ervinismu/kejarmimpi
@@ -37,7 +38,11 @@ Restfull api with gin-gonic framework golang language
 
 - Create apps : 
 
-      Heroku create
+      heroku create -b https://github.com/heroku/heroku-buildpack-go.git
+
+- Remote apps in Heroku :
+
+       heroku git:remote -a <your-apps-name>
 
 - Create database postgresql : 
 
