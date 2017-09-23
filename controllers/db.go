@@ -15,15 +15,16 @@ func InitDb() *gorm.DB {
 	var err error
 	dbhost := os.Getenv("DATABASE_URL")
 	if dbhost == "" {
-		dbhost = "host=127.0.0.1 user=postgres dbname=kejarmimpi sslmode=disable password=postgresreza"
+		dbhost = "host=127.0.0.1 user=postgres dbname=kejarmimpidb sslmode=disable password=kejarmimpi"
 	}
 	var post models.Post
 	var user models.User
 	var collabs models.Collabs
 	var star models.Star
+	var comment models.Comment
 
 	db, err := gorm.Open("postgres", dbhost)
-	db.AutoMigrate(post, user, collabs, star)
+	db.AutoMigrate(post, user, collabs, star, &comment)
 	if err != nil {
 		fmt.Println(err)
 	} else {

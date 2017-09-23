@@ -14,30 +14,47 @@ func GetPost(c *gin.Context) {
 	defer db.Close()
 	var post []models.Post
 
-<<<<<<< HEAD
 	if err := db.Raw("SELECT * FROM posts ORDER BY id DESC").Scan(&post).Error; err != nil {
-=======
-	if err := db.Find(&post).Error; err != nil {
->>>>>>> 53b1a263fc64ede3f0f1aa69986c94fbb420bf65
 		c.AbortWithStatus(404)
 		fmt.Println(err)
 	}
 
 	for i := 0; i < len(post); i++ {
+
 		var user models.User
+		var comment []models.Comment
+
 		if err := db.Where("id = ?", post[i].IDUser).Find(&user).Error; err != nil {
 			c.AbortWithStatus(404)
 			fmt.Println(err)
 		}
-<<<<<<< HEAD
+		// collapse
 		post[i].CollabsCount = CountCollabs(post[i].ID)
 		fmt.Println(post[i].CollabsCount)
-=======
->>>>>>> 53b1a263fc64ede3f0f1aa69986c94fbb420bf65
 		user.Password = ""
 		user.Token = ""
 		user.PasswordConfirm = ""
 		post[i].User = user
+		// symbol for array []
+		// read all comment in post
+		if err := db.Where("id_post = ?", post[i].ID).Find(&comment).Error; err != nil {
+			c.AbortWithStatus(404)
+			fmt.Println(err)
+		}
+		// if comment not nil
+		// run this
+		if len(comment) > 0 {
+			post[i].Comment = comment
+			for n := 0; n < len(post[i].Comment); n++ {
+				if err := db.Where("id_user = ?", post[i].Comment[n].IDUser).First(&user).Error; err != nil {
+					c.AbortWithStatus(404)
+					fmt.Println(err)
+				}
+				post[i].Comment[n].User = user
+				fmt.Println(user.Name)
+				fmt.Println(post[i].Comment[n].IDUser)
+			}
+		}
 	}
 	data := map[string]interface{}{
 		"post": post,

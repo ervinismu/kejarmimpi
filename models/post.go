@@ -12,6 +12,8 @@ type Post struct {
 	Photo        string    `form:"photo" json:"photo"`
 	IDUser       uint      `form:"idUser" json:"idUser"`
 	User         User      `form:"User" json:"User"`
+	IDComent     uint      `form:"idComment" json:"idComment"`
+	Comment      []Comment `form:"Comment" json:"Comment"`
 	CollabsCount int       `form:"CollabsCount" json:"CollabsCount"`
 	LoveCount    int       `form:"LoveCount" json:"LoveCount"`
 	IDCategory   uint      `form:"idCategory" json:"idCategory"`

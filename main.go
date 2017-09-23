@@ -19,7 +19,7 @@ func main() {
 	// db.AutoMigrate(&user)
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8000"
+		port = "8080"
 	}
 	//This func is for server API
 	r := gin.Default()
@@ -37,6 +37,8 @@ func main() {
 	r.POST("/post", controllers.CreatePost)
 	r.PUT("/post/:id", controllers.UpdatePost)
 	r.DELETE("/post/:id", controllers.DeletePost)
+	// Method for create comment in Post
+	r.POST("/comment/:id", controllers.CreateComment)
 	//Method for logout
 	// r.GET("/collabs/:id", controllers.Collabs)
 	r.GET("/logout", controllers.Logout)
