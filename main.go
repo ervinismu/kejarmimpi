@@ -3,9 +3,9 @@ package main
 import (
 	"os"
 
+	"github.com/ervinismu/kejarmimpi/controllers"
+	"github.com/ervinismu/kejarmimpi/middleware"
 	"github.com/gin-gonic/gin"
-	"github.com/rezandry/kejarmimpi/controllers"
-	"github.com/rezandry/kejarmimpi/middleware"
 )
 
 func main() {

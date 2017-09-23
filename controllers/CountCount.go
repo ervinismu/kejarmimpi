@@ -1,6 +1,6 @@
 package controllers
 
-import "github.com/rezandry/kejarmimpi/models"
+import "github.com/ervinismu/kejarmimpi/models"
 
 //CountCollabs is for count how many people collabs
 func CountCollabs(idPost uint) (count int) {

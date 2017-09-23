@@ -1,9 +1,9 @@
 package controllers
 
 import (
+	"github.com/ervinismu/kejarmimpi/models"
+	"github.com/ervinismu/kejarmimpi/template"
 	"github.com/gin-gonic/gin"
-	"github.com/rezandry/kejarmimpi/models"
-	"github.com/rezandry/kejarmimpi/template"
 )
 
 //Logout is func for logout from accout

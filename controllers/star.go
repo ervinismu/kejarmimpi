@@ -3,8 +3,8 @@ package controllers
 import (
 	"fmt"
 
+	"github.com/ervinismu/kejarmimpi/models"
 	"github.com/gin-gonic/gin"
-	"github.com/rezandry/kejarmimpi/models"
 )
 
 //Star is used for get content

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/ervinismu/kejarmimpi/models"
 	"github.com/gin-gonic/gin"
-	"github.com/rezandry/kejarmimpi/models"
 )
 
 // GetPost is method get post from database

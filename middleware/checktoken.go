@@ -1,9 +1,9 @@
 package middleware
 
 import (
+	"github.com/ervinismu/kejarmimpi/controllers"
+	"github.com/ervinismu/kejarmimpi/models"
 	"github.com/gin-gonic/gin"
-	"github.com/rezandry/kejarmimpi/controllers"
-	"github.com/rezandry/kejarmimpi/models"
 )
 
 // CheckToken is func for checking token

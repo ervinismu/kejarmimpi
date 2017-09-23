@@ -1,6 +1,6 @@
 package controllers
 
-import "github.com/rezandry/kejarmimpi/models"
+import "github.com/ervinismu/kejarmimpi/models"
 import "github.com/gin-gonic/gin"
 import "fmt"
 

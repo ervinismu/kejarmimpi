@@ -3,9 +3,9 @@ package controllers
 import (
 	"fmt"
 
+	"github.com/ervinismu/kejarmimpi/models"
+	"github.com/ervinismu/kejarmimpi/template"
 	"github.com/gin-gonic/gin"
-	"github.com/rezandry/kejarmimpi/models"
-	"github.com/rezandry/kejarmimpi/template"
 	"golang.org/x/crypto/bcrypt"
 )
 

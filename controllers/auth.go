@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"regexp"
 
+	"github.com/ervinismu/kejarmimpi/models"
+	"github.com/ervinismu/kejarmimpi/template"
 	"github.com/gin-gonic/gin"
-	"github.com/rezandry/kejarmimpi/models"
-	"github.com/rezandry/kejarmimpi/template"
 )
 
 // var db *gorm.DB

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/ervinismu/kejarmimpi/models"
 	"github.com/jinzhu/gorm"
-	"github.com/rezandry/kejarmimpi/models"
 	//For connect postgres
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
