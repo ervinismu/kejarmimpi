@@ -74,6 +74,5 @@ Testing your url with Postman or curl
 - Reza andriyunantoreza@gmail.com
 - Ervin social.ervin@gmail.com
 - Yudha yudhaariestra@gmail.com
->>>>>>> 53b1a263fc64ede3f0f1aa69986c94fbb420bf65
 
 
