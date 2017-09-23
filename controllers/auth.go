@@ -20,25 +20,6 @@ func Register(c *gin.Context) {
 	var res models.Response
 	c.Bind(&user)
 	fmt.Println(user.Email)
-	// switch {
-	// case user.Name == string(""):
-	// 	res.Code = "401"
-	// 	res.Message = "can not be empty"
-	// 	c.JSON(400, res)
-	// case user.Password == string(""):
-	// 	res.Code = "403"
-	// 	res.Message = "password can not be empty"
-	// 	c.JSON(400, res)
-	// case !emailRegexp.MatchString(user.Email):
-	// 	res.Code = "401"
-	// 	res.Message = "invalid format email!"
-	// 	c.JSON(400, res)
-	// case user.Password != user.PasswordConfirm:
-	// 	res.Code = "401"
-	// 	res.Message = "Password not same!"
-	// 	c.JSON(400, res)
-	// }
-
 	if user.Name == string("") {
 		res.Code = "401"
 		res.Message = "Field can not be empty"

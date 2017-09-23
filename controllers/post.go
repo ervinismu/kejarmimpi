@@ -14,7 +14,11 @@ func GetPost(c *gin.Context) {
 	defer db.Close()
 	var post []models.Post
 
+<<<<<<< HEAD
 	if err := db.Raw("SELECT * FROM posts ORDER BY id DESC").Scan(&post).Error; err != nil {
+=======
+	if err := db.Find(&post).Error; err != nil {
+>>>>>>> 53b1a263fc64ede3f0f1aa69986c94fbb420bf65
 		c.AbortWithStatus(404)
 		fmt.Println(err)
 	}
@@ -25,8 +29,11 @@ func GetPost(c *gin.Context) {
 			c.AbortWithStatus(404)
 			fmt.Println(err)
 		}
+<<<<<<< HEAD
 		post[i].CollabsCount = CountCollabs(post[i].ID)
 		fmt.Println(post[i].CollabsCount)
+=======
+>>>>>>> 53b1a263fc64ede3f0f1aa69986c94fbb420bf65
 		user.Password = ""
 		user.Token = ""
 		user.PasswordConfirm = ""

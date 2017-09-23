@@ -123,5 +123,13 @@
 			"revisionTime": "2017-08-12T16:00:11Z"
 		}
 	],
+<<<<<<< HEAD
 	"rootPath": "github.com/ervinismu/kejarmimpi"
+=======
+<<<<<<< HEAD
+	"rootPath": "github.com/ervinismu/kejarmimpi"
+=======
+	"rootPath": "kejarmimpi"
+>>>>>>> 9fafbf152d3328feb0d1dc7939112e8a940716f4
+>>>>>>> 53b1a263fc64ede3f0f1aa69986c94fbb420bf65
 }
